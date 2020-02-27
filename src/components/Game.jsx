@@ -20,7 +20,6 @@ class Game extends React.Component {
     
     const history = this.props.history.slice(0, this.props.stepNumber + 1);
     const current = history[history.length - 1];
-    console.log(current);
     const squares = current.squares.slice();
     const {dispatch} = this.props;
       const action = {
@@ -47,7 +46,6 @@ class Game extends React.Component {
     const history = this.props.history;
     const current = history[this.props.stepNumber];
     const winner = calculateWinner(current.squares);
-    console.log(this.props, this.state);
     const moves = history.map((step, move) => {
       const desc = move ? "Got to move #" + move : "Go to game start";
       return (
@@ -63,7 +61,6 @@ class Game extends React.Component {
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
-    console.log(current.squares);
     return (
       <div className="game">
         <div className="game-board">
